@@ -546,6 +546,27 @@ footer p {
         </div>
     </section>
 
+    var dialog = $('#wrapper').dialog({
+    autoOpen: false,
+    resizable: false,
+    title: 'Caixa de info'
+});
+$('#opener').click(function () {
+    $('#wrapper').dialog('open');
+    dialogPosition = $('.ui-dialog').offset().top;
+    dialogHeight = $('.ui-dialog').outerHeight();
+    ultimoScroll = $(window).scrollTop();
+});
+
+
+var dialog, dialogPosition, dialogHeight, ultimoScroll;
+$(window).on('scroll', function () {
+    var scroll = $(this).scrollTop();
+    var foraDoLimite = scroll > dialogPosition + dialogHeight || scroll < dialogPosition;
+    if (dialog.dialog( "isOpen" ) && foraDoLimite) $(window).scrollTop(ultimoScroll);
+    else ultimoScroll = scroll;
+});
+    
     <!-- Seção de Planos -->
     <section id="planos">
         <h2>TABELA DE REVENDA</h2>
