@@ -247,20 +247,7 @@ Copiar código
     transform: translateX(-50%); /* Garante que o pseudo-elemento fique perfeitamente centrado ao mover sua posição em 50% do seu próprio tamanho */
 }
 
-.planos-container {
-    display: flex; /* Usa o Flexbox para organizar os planos */
-    flex-direction: column; /* Exibe os planos em coluna por padrão (ideal para telas pequenas) */
-    gap: 25px; /* Define um espaço de 25 pixels entre cada plano */
-    margin-top: 30px; /* Adiciona um espaço de 30 pixels no topo do container dos planos */
-    align-items: center; /* Centraliza os planos horizontalmente no container */
-}
 
-@media (min-width: 400px) {
-    .planos-container {
-        ; /* Exibe os planos em linha nas telas maiores */
-        flex-wrap: wrap; /* Permite que os planos quebrem linha se necessário, em vez de sair da tela */
-        justify-content: center; /* Centraliza os planos horizontalmente no container */
-    }
 }
 
 .plano {
